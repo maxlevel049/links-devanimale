@@ -4,64 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevAnimale | Home</title>
-    <!-- Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- ESTILO EMBUTIDO (PARA GARANTIR QUE FUNCIONE) -->
+    <!-- ESTILO EMBUTIDO -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body {
-            background-color: #050505;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            background-color: #050505; color: #ffffff; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center; padding: 20px;
             background-image: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
                               radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
         }
         .container { width: 100%; max-width: 420px; text-align: center; animation: fadeIn 0.8s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* FOTO PERFIL */
         .perfil-container { position: relative; width: 140px; margin: 0 auto 20px; }
         .foto {
-            width: 140px; height: 140px;
-            border-radius: 50%; object-fit: cover;
-            border: 3px solid #1a1a1a;
-            box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
-            background-color: #000;
+            width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #1a1a1a; box-shadow: 0 0 25px rgba(139, 92, 246, 0.4); background-color: #000;
         }
         .status-dot {
-            position: absolute; bottom: 10px; right: 10px;
-            width: 20px; height: 20px; background: #22c55e;
-            border: 3px solid #050505; border-radius: 50%;
+            position: absolute; bottom: 10px; right: 10px; width: 20px; height: 20px;
+            background: #22c55e; border: 3px solid #050505; border-radius: 50%;
         }
 
-        /* TEXTOS */
         .bio h1 {
             font-size: 1.8rem; font-weight: 700; letter-spacing: 1px;
             background: linear-gradient(to right, #fff, #a78bfa);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px;
         }
         .bio p { color: #9ca3af; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; }
 
-        /* BOTÃO GIGANTE */
         .big-button {
-            display: flex; align-items: center;
-            background: linear-gradient(145deg, #171717, #0f0f0f);
-            border: 1px solid #333; padding: 20px; border-radius: 16px;
-            text-decoration: none; color: white; margin-bottom: 30px;
-            transition: all 0.3s; position: relative; overflow: hidden;
+            display: flex; align-items: center; background: linear-gradient(145deg, #171717, #0f0f0f);
+            border: 1px solid #333; padding: 20px; border-radius: 16px; text-decoration: none; color: white;
+            margin-bottom: 30px; transition: all 0.3s; position: relative; overflow: hidden;
         }
         .big-button:hover { transform: translateY(-5px); border-color: #8b5cf6; box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5); }
         .icon-wrapper {
-            width: 50px; height: 50px; background: rgba(139, 92, 246, 0.1);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; color: #8b5cf6; margin-right: 15px;
+            width: 50px; height: 50px; background: rgba(139, 92, 246, 0.1); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #8b5cf6; margin-right: 15px;
         }
         .text-wrapper { flex: 1; text-align: left; display: flex; flex-direction: column; }
         .label { font-size: 0.7rem; color: #6b7280; font-weight: 500; letter-spacing: 1px; }
@@ -69,12 +52,11 @@
         .arrow-icon { color: #4b5563; transition: 0.3s; }
         .big-button:hover .arrow-icon { color: #fff; transform: translateX(5px); }
 
-        /* REDES SOCIAIS */
         .social-row { display: flex; justify-content: center; gap: 15px; }
         .social-btn {
-            width: 50px; height: 50px; border-radius: 12px; background: #111;
-            border: 1px solid #222; display: flex; align-items: center; justify-content: center;
-            color: #9ca3af; text-decoration: none; font-size: 1.3rem; transition: 0.3s;
+            width: 50px; height: 50px; border-radius: 12px; background: #111; border: 1px solid #222;
+            display: flex; align-items: center; justify-content: center; color: #9ca3af; text-decoration: none;
+            font-size: 1.3rem; transition: 0.3s;
         }
         .social-btn:hover { color: white; transform: translateY(-3px); border-color: #555; }
         footer { margin-top: 50px; color: #4b5563; font-size: 0.75rem; }
@@ -83,30 +65,27 @@
 <body>
 
     <div class="container">
-        
-        <!-- FOTO -->
         <div class="perfil-container">
             <img src="perfil.jpg" alt="DevAnimale" class="foto">
             <div class="status-dot"></div>
         </div>
 
-        <!-- TEXTO -->
         <div class="bio">
             <h1>DEV ANIMALE</h1>
-            <p>Fullstack Developer & Creator</p>
+            <!-- Adicionei data-lang aqui -->
+            <p data-lang="job">Fullstack Developer & Creator</p>
         </div>
 
-        <!-- BOTÃO PARA APPS -->
         <a href="apps.html" class="big-button">
             <div class="icon-wrapper"><i class="fa-solid fa-layer-group"></i></div>
             <div class="text-wrapper">
-                <span class="label">PORTFÓLIO</span>
-                <span class="title">MEUS APPS</span>
+                <!-- Adicionei data-lang aqui -->
+                <span class="label" data-lang="portfolio">PORTFÓLIO</span>
+                <span class="title" data-lang="myapps">MEUS APPS</span>
             </div>
             <i class="fa-solid fa-arrow-right arrow-icon"></i>
         </a>
 
-        <!-- REDES -->
         <div class="social-row">
             <a href="https://github.com/maxlevel049" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
             <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -115,6 +94,26 @@
 
         <footer><p>&copy; 2023 DevAnimale. Code is Life.</p></footer>
     </div>
+
+    <!-- SCRIPT DE TRADUÇÃO -->
+    <script>
+        const texts = {
+            en: {
+                job: "Fullstack Developer & Creator",
+                portfolio: "PORTFOLIO",
+                myapps: "MY APPS"
+            }
+        };
+
+        const userLang = navigator.language || navigator.userLanguage;
+        // Se a língua NÃO começar com 'pt' (não for português), muda para inglês
+        if (!userLang.startsWith('pt')) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (texts.en[key]) el.innerText = texts.en[key];
+            });
+        }
+    </script>
 
 </body>
 </html>
