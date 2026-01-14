@@ -1,29 +1,36 @@
-/* --- RESET E BASES --- */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+/* --- RESET E CONFIGURAÇÕES BÁSICAS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
 body {
-    background-color: #050505;
+    background-color: #050505; /* Fundo preto quase total */
     color: #ffffff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+    padding: 20px; /* Espaço nas bordas em celulares pequenos */
 }
 
-/* Fundo Animado Discreto */
+/* Fundo Animado (Brilho Roxo e Azul no fundo) */
 .background-animado {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
     z-index: -1;
 }
 
+/* Container Principal (A caixa central) */
 .container {
     width: 100%;
-    max-width: 420px;
-    padding: 30px 20px;
+    max-width: 420px; /* Largura de celular */
     text-align: center;
     animation: fadeIn 0.8s ease-out;
 }
@@ -33,37 +40,41 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- PERFIL --- */
+/* --- PERFIL E FOTO (CORREÇÃO DO TAMANHO) --- */
 .perfil-container {
     position: relative;
-    width: 120px;
+    width: 140px; /* Tamanho fixo para o container da foto */
     margin: 0 auto 20px;
 }
 
 .foto {
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 140px;        /* FORÇA A LARGURA */
+    height: 140px;       /* FORÇA A ALTURA */
+    border-radius: 50%;  /* Deixa redonda */
+    object-fit: cover;   /* Corta a imagem pra caber na bolinha */
     border: 3px solid #1a1a1a;
     box-shadow: 0 0 25px rgba(139, 92, 246, 0.4); /* Brilho Roxo */
+    background-color: #000;
+    display: block;      /* Garante que não tenha espaços estranhos */
 }
 
 .status-dot {
     position: absolute;
-    bottom: 5px; right: 5px;
+    bottom: 10px; right: 10px;
     width: 20px; height: 20px;
-    background: #22c55e; /* Verde Online */
+    background: #22c55e; /* Bolinha verde */
     border: 3px solid #050505;
     border-radius: 50%;
 }
 
+/* Textos da Bio */
 .bio h1 {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     background: linear-gradient(to right, #fff, #a78bfa);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; /* Texto degradê */
     margin-bottom: 5px;
 }
 
@@ -75,7 +86,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* --- BOTÃO GIGANTE (HERO) --- */
+/* --- O BOTÃO GIGANTE (MEUS APPS) --- */
 .big-button {
     display: flex;
     align-items: center;
@@ -86,27 +97,16 @@ body {
     text-decoration: none;
     color: white;
     margin-bottom: 30px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
 }
 
-.big-button::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
-    transition: 0.5s;
-}
-
 .big-button:hover {
     transform: translateY(-5px);
-    border-color: #8b5cf6;
+    border-color: #8b5cf6; /* Borda roxa ao passar o mouse */
     box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5);
 }
-
-.big-button:hover::before { left: 100%; }
 
 .icon-wrapper {
     width: 50px; height: 50px;
@@ -127,6 +127,7 @@ body {
 
 /* --- REDES SOCIAIS --- */
 .social-row { display: flex; justify-content: center; gap: 15px; }
+
 .social-btn {
     width: 50px; height: 50px;
     border-radius: 12px;
@@ -138,12 +139,10 @@ body {
     font-size: 1.3rem;
     transition: 0.3s;
 }
-.social-btn:hover { color: white; transform: translateY(-3px); }
-.social-btn.github:hover { background: #333; }
-.social-btn.linkedin:hover { background: #0077b5; }
-.social-btn.email:hover { background: #ea4335; }
 
-/* --- PÁGINA DE APPS --- */
+.social-btn:hover { color: white; transform: translateY(-3px); border-color: #555; }
+
+/* --- PÁGINA DE APPS (Estilos da segunda página) --- */
 .back-link {
     display: flex; align-items: center; gap: 8px;
     color: #9ca3af; text-decoration: none;
@@ -160,13 +159,14 @@ body {
     padding-left: 15px;
 }
 
+.apps-grid { display: flex; flex-direction: column; gap: 20px; }
+
 .app-card {
     background: #111;
     border: 1px solid #222;
     border-radius: 16px;
     padding: 20px;
     text-align: left;
-    margin-bottom: 20px;
     transition: 0.3s;
 }
 
