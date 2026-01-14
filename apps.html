@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Apps | DevAnimale</title>
-    <!-- Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- ESTILO EMBUTIDO -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body {
@@ -20,7 +18,6 @@
         .container { width: 100%; max-width: 420px; text-align: center; animation: fadeIn 0.8s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* VOLTAR */
         .back-link {
             display: flex; align-items: center; gap: 8px; color: #9ca3af; text-decoration: none;
             font-weight: 500; margin-bottom: 25px; transition: 0.2s; align-self: flex-start;
@@ -32,7 +29,6 @@
             border-left: 4px solid #8b5cf6; padding-left: 15px;
         }
 
-        /* CARDS */
         .apps-grid { display: flex; flex-direction: column; gap: 20px; }
         .app-card {
             background: #111; border: 1px solid #222; border-radius: 16px;
@@ -44,17 +40,20 @@
         }
         .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         
-        /* ÍCONE DO APP (AGORA SUPORTA IMAGEM) */
+        /* CSS DA LOGO */
         .app-icon {
-            width: 50px; height: 50px; border-radius: 12px; display: flex;
-            align-items: center; justify-content: center; font-size: 1.5rem;
-            overflow: hidden; /* Garante que a imagem não saia da borda */
+            width: 60px; height: 60px; /* Um pouco maior para caber a logo */
+            border-radius: 12px; display: flex;
+            align-items: center; justify-content: center; 
+            overflow: hidden;
+            background: rgba(139, 92, 246, 0.1); /* Fundo roxo caso a imagem seja transparente */
+            border: 1px solid rgba(139, 92, 246, 0.3);
         }
         .app-icon img {
-            width: 100%; height: 100%; object-fit: cover; /* Faz a imagem preencher tudo */
+            width: 100%; height: 100%; object-fit: cover;
         }
-        .purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
-        .blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        /* Caso a imagem não carregue, o ícone azul aparece */
+        .blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; font-size: 1.5rem; }
         
         .app-info h3 { font-size: 1.1rem; margin: 0; }
         .badge {
@@ -64,7 +63,6 @@
         .badge.gray { background: #374151; color: #9ca3af; }
         .app-description { font-size: 0.85rem; color: #9ca3af; line-height: 1.6; margin-bottom: 20px; }
 
-        /* BOTÕES DO APP */
         .card-actions { display: flex; gap: 10px; }
         .btn {
             flex: 1; padding: 10px; border-radius: 8px; text-decoration: none;
@@ -87,13 +85,12 @@
 
         <div class="apps-grid">
 
-            <!-- APP MAGO DO AFTER (COM LOGO E NOVA DESCRIÇÃO) -->
+            <!-- APP: MAGO DO AFTER -->
             <div class="app-card featured">
                 <div class="card-header">
-                    <!-- AQUI ENTRA A LOGO -->
-                    <!-- Certifique-se que o arquivo no GitHub se chama "mago-logo.png" -->
-                    <div class="app-icon purple">
-                        <img src="mago-logo.png" alt="Logo Mago do After">
+                    <!-- AQUI ESTÁ A IMAGEM -->
+                    <div class="app-icon">
+                        <img src="mago-logo.png" alt="Mago Logo">
                     </div>
                     
                     <div class="app-info">
@@ -102,7 +99,6 @@
                     </div>
                 </div>
                 
-                <!-- NOVA DESCRIÇÃO PROFISSIONAL -->
                 <p class="app-description">
                     Desbloqueie a magia do código no After Effects. Guiado pela sabedoria de um mago milenar, aprenda a dominar scripts e desenvolver plugins avançados com funções exclusivas.
                 </p>
@@ -113,7 +109,7 @@
                 </div>
             </div>
 
-            <!-- APP EXEMPLO -->
+            <!-- APP: EXEMPLO -->
             <div class="app-card">
                 <div class="card-header">
                     <div class="app-icon blue"><i class="fa-solid fa-gamepad"></i></div>
