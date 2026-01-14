@@ -4,56 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Apps | DevAnimale</title>
+    <!-- Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- ESTILO EMBUTIDO -->
     <style>
+        /* Reset e Fontes */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        /* Corpo e Fundo */
         body {
             background-color: #050505; color: #ffffff; min-height: 100vh;
             display: flex; justify-content: center; align-items: center; padding: 20px;
             background-image: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
                               radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
         }
+
+        /* Container Principal */
         .container { width: 100%; max-width: 420px; text-align: center; animation: fadeIn 0.8s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Botão Voltar */
         .back-link {
             display: flex; align-items: center; gap: 8px; color: #9ca3af; text-decoration: none;
             font-weight: 500; margin-bottom: 25px; transition: 0.2s; align-self: flex-start;
         }
         .back-link:hover { color: #fff; transform: translateX(-5px); }
 
+        /* Título da Seção */
         .section-title {
             text-align: left; font-size: 1.5rem; margin-bottom: 20px;
             border-left: 4px solid #8b5cf6; padding-left: 15px;
         }
 
+        /* Grade de Apps */
         .apps-grid { display: flex; flex-direction: column; gap: 20px; }
+
+        /* Cartão do App */
         .app-card {
             background: #111; border: 1px solid #222; border-radius: 16px;
             padding: 20px; text-align: left; transition: 0.3s;
         }
+        
+        /* Destaque (Roxo) */
         .app-card.featured {
             background: linear-gradient(180deg, rgba(139, 92, 246, 0.05), #0a0a0a);
             border-color: rgba(139, 92, 246, 0.3);
         }
+
+        /* Cabeçalho do Card */
         .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         
-        /* CSS DA LOGO */
+        /* Ícone/Logo do App */
         .app-icon {
             width: 60px; height: 60px;
             border-radius: 12px; display: flex;
             align-items: center; justify-content: center; 
-            overflow: hidden;
+            overflow: hidden; /* Corta a imagem se sobrar */
             background: rgba(139, 92, 246, 0.1);
             border: 1px solid rgba(139, 92, 246, 0.3);
         }
         .app-icon img {
             width: 100%; height: 100%; object-fit: cover;
         }
-        .blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; font-size: 1.5rem; }
+        /* Ícone genérico (azul) */
+        .blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; font-size: 1.5rem; border: none; }
         
+        /* Textos do Card */
         .app-info h3 { font-size: 1.1rem; margin: 0; }
         .badge {
             font-size: 0.65rem; padding: 3px 8px; border-radius: 4px;
@@ -62,6 +80,7 @@
         .badge.gray { background: #374151; color: #9ca3af; }
         .app-description { font-size: 0.85rem; color: #9ca3af; line-height: 1.6; margin-bottom: 20px; }
 
+        /* Botões de Ação */
         .card-actions { display: flex; gap: 10px; }
         .btn {
             flex: 1; padding: 10px; border-radius: 8px; text-decoration: none;
@@ -78,17 +97,18 @@
 
     <div class="container">
         
+        <!-- Link para voltar para a Home -->
         <a href="index.html" class="back-link"><i class="fa-solid fa-chevron-left"></i> Voltar</a>
 
         <h2 class="section-title">MEUS PROJETOS</h2>
 
         <div class="apps-grid">
 
-            <!-- APP: MAGO DO AFTER -->
+            <!-- APP 1: MAGO DO AFTER -->
             <div class="app-card featured">
                 <div class="card-header">
                     <div class="app-icon">
-                        <!-- Certifique-se que o arquivo mago-logo.png está no GitHub -->
+                        <!-- Logo do App (mago-logo.png deve estar no GitHub) -->
                         <img src="mago-logo.png" alt="Mago Logo">
                     </div>
                     
@@ -103,15 +123,19 @@
                 </p>
                 
                 <div class="card-actions">
-                    <!-- LINK DO MEDIAFIRE ADICIONADO AQUI -->
+                    <!-- BOTÃO DE DOWNLOAD (MEDIAFIRE) -->
                     <a href="https://www.mediafire.com/file/vrtd31lm7yk191g/mago+do+after.apk/file" target="_blank" class="btn primary">
                         <i class="fa-solid fa-download"></i> Baixar APK
                     </a>
-                    <a href="#" class="btn secondary"><i class="fa-brands fa-github"></i> Código</a>
+                    
+                    <!-- BOTÃO DO CÓDIGO (GITHUB DO PROJETO) -->
+                    <a href="#" class="btn secondary">
+                        <i class="fa-brands fa-github"></i> Código
+                    </a>
                 </div>
             </div>
 
-            <!-- APP: EXEMPLO -->
+            <!-- APP 2: EXEMPLO -->
             <div class="app-card">
                 <div class="card-header">
                     <div class="app-icon blue"><i class="fa-solid fa-gamepad"></i></div>
