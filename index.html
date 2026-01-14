@@ -5,46 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links | DevAnimale</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte (Poppins) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Ícones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <div class="container">
-        <!-- FOTO DE PERFIL -->
-        <!-- SUBSTITUA "suafoto.jpg" PELO NOME EXATO DO ARQUIVO QUE VOCÊ SUBIU -->
+        
+        <!-- VERIFIQUE SE O NOME DO ARQUIVO NO GITHUB É EXATAMENTE "perfil.jpg" -->
+        <!-- Se no GitHub estiver "Perfil.jpg" ou "perfil.JPG", mude aqui! -->
         <img src="perfil.jpg" alt="DevAnimale" class="foto-perfil">
 
         <div class="cabecalho">
             <h1>DevAnimale</h1>
-            <p>Desenvolvedor Fullstack | Apps Incríveis</p>
+            <p>Desenvolvedor Fullstack</p>
         </div>
 
-        <!-- LISTA DE LINKS -->
+        <!-- SEÇÃO: MEUS APPS -->
+        <div class="secao-titulo">MEUS APPS CRIADOS</div>
+        
         <div class="lista-links">
             
-            <!-- Link 1: Mago do After (NOVO) -->
-            <!-- Coloque o link do download ou da loja onde está o # -->
-            <a href="#" target="_blank" class="botao destaque">
-                <i class="fa-solid fa-hat-wizard"></i>
-                <span>Mago do After</span>
+            <!-- App 1: Mago do After -->
+            <a href="#" target="_blank" class="botao destaque-app">
+                <div class="info-app">
+                    <i class="fa-solid fa-hat-wizard icone-grande"></i>
+                    <div class="texto-app">
+                        <strong>Mago do After</strong>
+                        <small>O melhor app para seus rolês</small>
+                    </div>
+                </div>
+                <i class="fa-solid fa-download"></i>
             </a>
 
-            <!-- Link 2: GitHub -->
+            <!-- Aqui você pode adicionar mais apps no futuro copiando o bloco acima -->
+
+        </div>
+
+        <!-- SEÇÃO: REDES SOCIAIS -->
+        <div class="secao-titulo">MINHAS REDES</div>
+
+        <div class="lista-links">
+            
             <a href="https://github.com/maxlevel049" target="_blank" class="botao">
                 <i class="fa-brands fa-github"></i>
-                <span>Meu GitHub</span>
+                <span>GitHub</span>
             </a>
 
-            <!-- Link 3: LinkedIn ou Outro App -->
             <a href="#" target="_blank" class="botao">
-                <i class="fa-solid fa-rocket"></i>
-                <span>Outros Projetos</span>
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
             </a>
 
-            <!-- Link 4: Contato -->
             <a href="mailto:seuemail@gmail.com" class="botao">
                 <i class="fa-solid fa-envelope"></i>
                 <span>Contato</span>
@@ -59,4 +71,3 @@
 
 </body>
 </html>
-
