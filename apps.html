@@ -66,12 +66,10 @@
 
     <div class="container">
         
-        <!-- Botão Voltar -->
         <a href="index.html" class="back-link">
             <i class="fa-solid fa-chevron-left"></i> <span data-lang="back">Voltar</span>
         </a>
 
-        <!-- Título -->
         <h2 class="section-title" data-lang="myprojects">MEUS PROJETOS</h2>
 
         <div class="apps-grid">
@@ -88,7 +86,7 @@
                     </div>
                 </div>
                 
-                <!-- DESCRIÇÃO QUE SERÁ TRADUZIDA -->
+                <!-- DESCRIÇÃO -->
                 <p class="app-description" data-lang="magoDesc">
                     Desbloqueie a magia do código no After Effects. Guiado pela sabedoria de um mago milenar, aprenda a dominar scripts e desenvolver plugins avançados com funções exclusivas.
                 </p>
@@ -118,9 +116,9 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE TRADUÇÃO INTELIGENTE -->
+    <!-- SCRIPT DE TRADUÇÃO -->
     <script>
-        // Dicionário de traduções (Inglês)
+        // Dicionário de Inglês
         const translations = {
             en: {
                 back: "Back",
@@ -135,10 +133,10 @@
             }
         };
 
-        // Detecta a linguagem do navegador
+        // Verifica a língua do navegador
         const userLang = navigator.language || navigator.userLanguage;
 
-        // Se NÃO for português, aplica o inglês
+        // Se NÃO for português, aplica a tradução
         if (!userLang.startsWith('pt')) {
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
