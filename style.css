@@ -1,133 +1,65 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Apps | DevAnimale</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
-body {
-    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 20px 0; /* Espaço para rolar em telas pequenas */
-}
+    <div class="container">
+        
+        <!-- Botão de Voltar -->
+        <div style="text-align: left; margin-bottom: 20px;">
+            <a href="index.html" class="btn-voltar">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+            </a>
+        </div>
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        <div class="cabecalho">
+            <h1>Galeria de Apps</h1>
+            <p>Projetos desenvolvidos por DevAnimale</p>
+        </div>
 
-.container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    text-align: center;
-}
+        <div class="lista-links">
+            
+            <!-- APP 1: MAGO DO AFTER -->
+            <div class="cartao-app">
+                <div class="app-header">
+                    <i class="fa-solid fa-hat-wizard icone-app"></i>
+                    <div>
+                        <h3>Mago do After</h3>
+                        <span class="tag">Destaque</span>
+                    </div>
+                </div>
+                <p class="app-desc">O aplicativo essencial para gerenciar seus rolês e calcular gastos do after.</p>
+                <div class="app-actions">
+                    <a href="#" class="btn-download">Download APK</a>
+                    <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> Código</a>
+                </div>
+            </div>
 
-.foto-perfil {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    margin-bottom: 15px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    background-color: #fff;
-}
+            <!-- APP 2: EM BREVE (Exemplo) -->
+            <div class="cartao-app" style="opacity: 0.7;">
+                <div class="app-header">
+                    <i class="fa-solid fa-gamepad icone-app"></i>
+                    <div>
+                        <h3>Próximo Jogo</h3>
+                        <span class="tag" style="background: #555;">Em Breve</span>
+                    </div>
+                </div>
+                <p class="app-desc">Um jogo novo está sendo desenvolvido na Unity.</p>
+            </div>
 
-.cabecalho h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
+        </div>
 
-.cabecalho p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 20px;
-}
+        <footer>
+            <p>© 2023 DevAnimale</p>
+        </footer>
+    </div>
 
-/* Títulos das Seções (Meus Apps / Redes) */
-.secao-titulo {
-    text-align: left;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.6);
-    margin-top: 25px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 5px;
-}
-
-.lista-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.botao {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 15px 20px;
-    border-radius: 16px; /* Bordas um pouco menos redondas para parecer app */
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centraliza itens simples */
-    gap: 10px;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.botao:hover {
-    transform: scale(1.02);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Estilo Especial para o App (Mago do After) */
-.botao.destaque-app {
-    justify-content: space-between; /* Espalha o conteúdo */
-    background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-    text-align: left;
-    border-left: 4px solid #a855f7; /* Borda roxa de destaque */
-}
-
-.info-app {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.icone-grande {
-    font-size: 1.5rem;
-    color: #d8b4fe;
-}
-
-.texto-app {
-    display: flex;
-    flex-direction: column;
-}
-
-.texto-app strong {
-    font-size: 1rem;
-}
-
-.texto-app small {
-    font-size: 0.75rem;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 0.75rem;
-    opacity: 0.5;
-}
+</body>
+</html>
