@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    padding: 20px 0; /* Espaço para rolar em telas pequenas */
 }
 
 @keyframes gradientBG {
@@ -33,11 +34,11 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    object-fit: cover; /* Garante que a foto não fique esticada */
+    object-fit: cover;
     border: 3px solid #fff;
     margin-bottom: 15px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    background-color: #fff; /* Fundo branco caso a imagem demore a carregar */
+    background-color: #fff;
 }
 
 .cabecalho h1 {
@@ -48,13 +49,26 @@ body {
 .cabecalho p {
     font-size: 0.9rem;
     opacity: 0.8;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+/* Títulos das Seções (Meus Apps / Redes) */
+.secao-titulo {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 5px;
 }
 
 .lista-links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .botao {
@@ -62,33 +76,54 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 15px 20px;
-    border-radius: 50px;
+    border-radius: 16px; /* Bordas um pouco menos redondas para parecer app */
     text-decoration: none;
     color: white;
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centraliza itens simples */
     gap: 10px;
     transition: transform 0.2s, background 0.2s;
 }
 
 .botao:hover {
-    transform: scale(1.03);
-    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* Destaque para o Mago do After */
-.botao.destaque {
-    background: white;
-    color: #302b63;
-    border: none;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+/* Estilo Especial para o App (Mago do After) */
+.botao.destaque-app {
+    justify-content: space-between; /* Espalha o conteúdo */
+    background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+    text-align: left;
+    border-left: 4px solid #a855f7; /* Borda roxa de destaque */
 }
 
-.botao.destaque:hover {
-    background: #f0f0f0;
-    transform: scale(1.05);
+.info-app {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icone-grande {
+    font-size: 1.5rem;
+    color: #d8b4fe;
+}
+
+.texto-app {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-app strong {
+    font-size: 1rem;
+}
+
+.texto-app small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.8;
 }
 
 footer {
