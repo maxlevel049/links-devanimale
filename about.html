@@ -9,7 +9,7 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        html { scroll-behavior: smooth; /* Faz o botão deslizar suavemente */ }
+        html { scroll-behavior: smooth; }
         body {
             background-color: #050505; color: #ffffff; min-height: 100vh;
             display: flex; justify-content: center; align-items: flex-start;
@@ -48,7 +48,7 @@
         .text-content { color: #d1d5db; font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
         .highlight { color: #22c55e; font-weight: 600; }
 
-        /* BOTÃO DE TERMOS (NOVO) */
+        /* BOTÃO DE TERMOS */
         .terms-btn-container { margin-bottom: 40px; }
         .terms-link-btn {
             display: inline-flex; align-items: center; gap: 10px;
@@ -58,11 +58,11 @@
         }
         .terms-link-btn:hover { border-color: #22c55e; color: #fff; background: rgba(34, 197, 94, 0.1); }
 
-        /* SEÇÃO DE TERMOS (ALVO DO BOTÃO) */
+        /* SEÇÃO DE TERMOS */
         .terms-section {
             background: rgba(17, 17, 17, 0.6); border: 1px solid #222;
             padding: 30px; border-radius: 20px; text-align: left;
-            scroll-margin-top: 20px; /* Espaço ao rolar */
+            scroll-margin-top: 20px;
         }
         .term-header { border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
         .term-item { margin-bottom: 20px; }
@@ -87,29 +87,29 @@
             <p class="subtitle" data-lang="role">Fullstack Developer</p>
         </div>
 
-        <!-- QUEM SOU EU (ATUALIZADO) -->
+        <!-- QUEM SOU EU (GENERALISTA) -->
         <div class="section-box">
             <div class="box-header">
                 <i class="fa-solid fa-code box-icon"></i>
                 <h2 class="box-title" data-lang="aboutTitle">Quem sou eu?</h2>
             </div>
             <p class="text-content" data-lang="aboutText">
-                Não sou apenas um programador, sou um <span class="highlight">solucionador de problemas</span>. Desenvolvo ferramentas digitais, scripts e aplicativos que facilitam a vida das pessoas, seja na edição de vídeo ou na produtividade diária. Onde existe complexidade, eu crio simplicidade através do código.
+                Não sou apenas um programador, sou um <span class="highlight">criador de soluções</span>. Desenvolvo ferramentas digitais e aplicativos variados para resolver problemas reais. Seja um utilitário de produtividade, um jogo ou uma ferramenta de automação: onde existe complexidade, eu crio simplicidade através do código.
             </p>
         </div>
 
-        <!-- AMBIÇÃO (MOTIVACIONAL) -->
+        <!-- AMBIÇÃO (GENERALISTA) -->
         <div class="section-box">
             <div class="box-header">
                 <i class="fa-solid fa-meteor box-icon"></i>
                 <h2 class="box-title" data-lang="ambitionTitle">Minha Ambição</h2>
             </div>
             <p class="text-content" data-lang="ambitionText">
-                Minha missão é quebrar barreiras técnicas. Quero criar um ecossistema onde a tecnologia não seja um obstáculo, mas um superpoder. Acredito que qualquer pessoa pode materializar suas ideias se tiver as ferramentas certas. Meus apps existem para transformar o "impossível" em "feito".
+                Minha missão é construir um ecossistema digital completo. Quero que a tecnologia seja um superpoder acessível a todos. Meu objetivo é lançar aplicativos inovadores em diferentes nichos, sempre focando em performance, design e, acima de tudo, em ser útil para você.
             </p>
         </div>
 
-        <!-- BOTÃO PARA IR AOS TERMOS -->
+        <!-- BOTÃO PARA TERMOS -->
         <div class="terms-btn-container">
             <a href="#termos-legais" class="terms-link-btn">
                 <i class="fa-solid fa-file-contract"></i> 
@@ -118,7 +118,7 @@
             </a>
         </div>
 
-        <!-- SEÇÃO DE TERMOS (COM ID PARA O LINK FUNCIONAR) -->
+        <!-- SEÇÃO DE TERMOS (GENERALISTA) -->
         <div id="termos-legais" class="terms-section">
             <div class="term-header">
                 <h2 class="box-title" data-lang="legalTitle">Termos Legais & Privacidade</h2>
@@ -126,17 +126,17 @@
             
             <div class="term-item">
                 <span class="term-title" data-lang="term1Title">1. Responsabilidade de Uso</span>
-                <p class="term-desc" data-lang="term1Desc">O "Mago do After" e demais utilitários são ferramentas de auxílio. O usuário concorda em utilizá-los de forma ética. O desenvolvedor não se responsabiliza pelo uso indevido das ferramentas.</p>
+                <p class="term-desc" data-lang="term1Desc">Os aplicativos desenvolvidos por DevAnimale são ferramentas independentes. O usuário concorda em utilizá-los de forma ética e responsável.</p>
             </div>
 
             <div class="term-item">
                 <span class="term-title" data-lang="term2Title">2. Privacidade e Dados</span>
-                <p class="term-desc" data-lang="term2Desc">Transparência total: Nossos aplicativos são projetados para funcionar localmente sempre que possível. Não coletamos, vendemos ou compartilhamos seus dados pessoais com terceiros.</p>
+                <p class="term-desc" data-lang="term2Desc">Transparência total: Nossos aplicativos são projetados para respeitar sua privacidade. Não coletamos, vendemos ou compartilhamos dados pessoais sensíveis com terceiros sem consentimento.</p>
             </div>
 
             <div class="term-item">
                 <span class="term-title" data-lang="term3Title">3. Propriedade Intelectual</span>
-                <p class="term-desc" data-lang="term3Desc">Todo o código, design e funcionalidades dos apps são de propriedade intelectual do DevAnimale. A distribuição não autorizada ou engenharia reversa é proibida.</p>
+                <p class="term-desc" data-lang="term3Desc">Todo o código, design, marcas e funcionalidades dos apps listados neste portfólio são de propriedade intelectual do DevAnimale.</p>
             </div>
         </div>
 
@@ -153,25 +153,23 @@
                 back: "Back to Home",
                 role: "Fullstack Developer",
                 
-                // Sobre
+                // Sobre (Generalista)
                 aboutTitle: "Who am I?",
-                aboutText: "I am not just a programmer, I am a <span class='highlight'>problem solver</span>. I develop digital tools, scripts, and apps that make people's lives easier, whether in video editing or daily productivity. Where complexity exists, I create simplicity through code.",
+                aboutText: "I am not just a programmer, I am a <span class='highlight'>solution creator</span>. I develop digital tools and various apps to solve real problems. Whether it's a productivity utility, a game, or an automation tool: where complexity exists, I create simplicity through code.",
                 
-                // Ambição
+                // Ambição (Generalista)
                 ambitionTitle: "My Ambition",
-                ambitionText: "My mission is to break technical barriers. I want to create an ecosystem where technology is not an obstacle, but a superpower. I believe anyone can materialize their ideas with the right tools. My apps exist to turn 'impossible' into 'done'.",
-
-                // Botão e Título Termos
-                btnTerms: "View Apps Terms of Use",
-                legalTitle: "Legal Terms & Privacy",
+                ambitionText: "My mission is to build a complete digital ecosystem. I want technology to be a superpower accessible to everyone. My goal is to launch innovative applications across different niches, always focusing on performance, design, and above all, utility for you.",
 
                 // Termos
+                btnTerms: "View Apps Terms of Use",
+                legalTitle: "Legal Terms & Privacy",
                 term1Title: "1. Usage Responsibility",
-                term1Desc: "\"Wizard of After\" and other utilities are support tools. The user agrees to use them ethically. The developer is not responsible for misuse of the tools.",
+                term1Desc: "Applications developed by DevAnimale are independent tools. The user agrees to use them ethically and responsibly.",
                 term2Title: "2. Privacy & Data",
-                term2Desc: "Total transparency: Our apps are designed to work locally whenever possible. We do not collect, sell, or share your personal data with third parties.",
+                term2Desc: "Total transparency: Our apps are designed to respect your privacy. We do not collect, sell, or share sensitive personal data with third parties without consent.",
                 term3Title: "3. Intellectual Property",
-                term3Desc: "All code, design, and app functionality are the intellectual property of DevAnimale. Unauthorized distribution or reverse engineering is prohibited."
+                term3Desc: "All code, design, branding, and functionality of the apps listed in this portfolio are the intellectual property of DevAnimale."
             }
         };
 
