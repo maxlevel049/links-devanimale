@@ -52,9 +52,13 @@
         .arrow-icon { color: #4b5563; transition: 0.3s; }
         .big-button:hover .arrow-icon { color: #fff; transform: translateX(5px); }
 
-        /* Botão Secundário (Sobre Mim) - Cor diferente no hover */
+        /* Botão Sobre Mim (Verde) */
         .about-btn:hover { border-color: #22c55e; box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.4); }
         .about-btn .icon-wrapper { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+
+        /* Botão Doação (Dourado/Gold) */
+        .donate-btn:hover { border-color: #eab308; box-shadow: 0 10px 30px -10px rgba(234, 179, 8, 0.4); }
+        .donate-btn .icon-wrapper { background: rgba(234, 179, 8, 0.1); color: #eab308; }
 
         .social-row { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
         .social-btn {
@@ -89,12 +93,23 @@
             <i class="fa-solid fa-arrow-right arrow-icon"></i>
         </a>
 
-        <!-- BOTÃO 2: SOBRE MIM (NOVO) -->
+        <!-- BOTÃO 2: SOBRE MIM -->
         <a href="about.html" class="big-button about-btn">
             <div class="icon-wrapper"><i class="fa-solid fa-user-astronaut"></i></div>
             <div class="text-wrapper">
                 <span class="label" data-lang="profile">PERFIL</span>
                 <span class="title" data-lang="aboutme">QUEM SOU EU</span>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+        </a>
+
+        <!-- BOTÃO 3: DOAÇÃO (NOVO) -->
+        <!-- Substitua o # pelo seu link do Paypal/Pix/BuyMeACoffee -->
+        <a href="#" target="_blank" class="big-button donate-btn">
+            <div class="icon-wrapper"><i class="fa-solid fa-heart"></i></div>
+            <div class="text-wrapper">
+                <span class="label" data-lang="support">CONTRIBUIR</span>
+                <span class="title" data-lang="donate">FAZER DOAÇÃO</span>
             </div>
             <i class="fa-solid fa-arrow-right arrow-icon"></i>
         </a>
@@ -115,7 +130,9 @@
                 portfolio: "PORTFOLIO",
                 myapps: "MY APPS",
                 profile: "PROFILE",
-                aboutme: "WHO I AM"
+                aboutme: "WHO I AM",
+                support: "SUPPORT",
+                donate: "DONATE NOW"
             }
         };
 
