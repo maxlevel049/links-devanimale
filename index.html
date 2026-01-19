@@ -35,7 +35,6 @@
         }
         .bio p { color: #9ca3af; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
 
-        /* ESTILO DOS BOTÕES GRANDES */
         .big-button {
             display: flex; align-items: center; background: linear-gradient(145deg, #171717, #0f0f0f);
             border: 1px solid #333; padding: 20px; border-radius: 16px; text-decoration: none; color: white;
@@ -52,11 +51,9 @@
         .arrow-icon { color: #4b5563; transition: 0.3s; }
         .big-button:hover .arrow-icon { color: #fff; transform: translateX(5px); }
 
-        /* Botão Sobre Mim (Verde) */
         .about-btn:hover { border-color: #22c55e; box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.4); }
         .about-btn .icon-wrapper { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
 
-        /* Botão Doação (Dourado/Gold) */
         .donate-btn:hover { border-color: #eab308; box-shadow: 0 10px 30px -10px rgba(234, 179, 8, 0.4); }
         .donate-btn .icon-wrapper { background: rgba(234, 179, 8, 0.1); color: #eab308; }
 
@@ -67,7 +64,13 @@
             font-size: 1.3rem; transition: 0.3s;
         }
         .social-btn:hover { color: white; transform: translateY(-3px); border-color: #555; }
-        footer { margin-top: 50px; color: #4b5563; font-size: 0.75rem; }
+        
+        /* LINK PEQUENO DO FOOTER */
+        .footer-links { margin-top: 40px; }
+        .footer-link { color: #4b5563; font-size: 0.75rem; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.2s; }
+        .footer-link:hover { color: #888; border-color: #888; }
+        .copy { color: #4b5563; font-size: 0.75rem; margin-top: 10px; }
+
     </style>
 </head>
 <body>
@@ -83,7 +86,6 @@
             <p data-lang="job">Desenvolvedor Fullstack & Criador</p>
         </div>
 
-        <!-- BOTÃO 1: MEUS APPS -->
         <a href="apps.html" class="big-button">
             <div class="icon-wrapper"><i class="fa-solid fa-layer-group"></i></div>
             <div class="text-wrapper">
@@ -93,7 +95,6 @@
             <i class="fa-solid fa-arrow-right arrow-icon"></i>
         </a>
 
-        <!-- BOTÃO 2: SOBRE MIM -->
         <a href="about.html" class="big-button about-btn">
             <div class="icon-wrapper"><i class="fa-solid fa-user-astronaut"></i></div>
             <div class="text-wrapper">
@@ -103,8 +104,6 @@
             <i class="fa-solid fa-arrow-right arrow-icon"></i>
         </a>
 
-        <!-- BOTÃO 3: DOAÇÃO (NOVO) -->
-        <!-- Substitua o # pelo seu link do Paypal/Pix/BuyMeACoffee -->
         <a href="#" target="_blank" class="big-button donate-btn">
             <div class="icon-wrapper"><i class="fa-solid fa-heart"></i></div>
             <div class="text-wrapper">
@@ -120,7 +119,11 @@
             <a href="mailto:pyloai@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
         </div>
 
-        <footer><p>&copy; 2023 DevAnimale. Code is Life.</p></footer>
+        <!-- LINK PARA A PÁGINA DE TERMOS NO RODAPÉ -->
+        <div class="footer-links">
+            <a href="terms.html" class="footer-link" data-lang="legal">Termos de Uso & Privacidade</a>
+            <p class="copy">&copy; 2023 DevAnimale. Code is Life.</p>
+        </div>
     </div>
 
     <script>
@@ -132,7 +135,8 @@
                 profile: "PROFILE",
                 aboutme: "WHO I AM",
                 support: "SUPPORT",
-                donate: "DONATE NOW"
+                donate: "DONATE NOW",
+                legal: "Terms of Use & Privacy"
             }
         };
 
