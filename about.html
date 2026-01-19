@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | DevAnimale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            background-color: #050505; color: #ffffff; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center; padding: 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 40%);
+        }
+        .container { width: 100%; max-width: 420px; text-align: center; animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .back-link {
+            display: flex; align-items: center; gap: 8px; color: #9ca3af; text-decoration: none;
+            font-weight: 500; margin-bottom: 25px; transition: 0.2s; align-self: flex-start;
+        }
+        .back-link:hover { color: #fff; transform: translateX(-5px); }
+
+        /* FOTO DESTAQUE */
+        .hero-foto {
+            width: 100px; height: 100px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #22c55e; margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.8rem; margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #4ade80);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;
+        }
+
+        .subtitle { color: #9ca3af; font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 1px; }
+
+        /* CAIXAS DE TEXTO */
+        .text-box {
+            background: #111; border: 1px solid #222; border-radius: 16px; padding: 25px;
+            text-align: left; margin-bottom: 20px; transition: 0.3s;
+        }
+        .text-box:hover { border-color: rgba(34, 197, 94, 0.4); background: linear-gradient(180deg, rgba(34, 197, 94, 0.05), #0a0a0a); }
+        
+        .box-title { 
+            display: flex; align-items: center; gap: 10px; color: #22c55e; 
+            font-weight: 700; margin-bottom: 15px; font-size: 1.1rem; 
+        }
+        
+        .content-text { color: #d1d5db; font-size: 0.9rem; line-height: 1.6; }
+
+        footer { margin-top: 40px; color: #4b5563; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-chevron-left"></i> <span data-lang="back">Voltar</span>
+        </a>
+
+        <img src="perfil.jpg" alt="DevAnimale" class="hero-foto">
+        <h1 class="section-title">DEV ANIMALE</h1>
+        <p class="subtitle" data-lang="role">Fullstack Developer & Creator</p>
+
+        <!-- CAIXA 1: SOBRE MIM -->
+        <div class="text-box">
+            <div class="box-title">
+                <i class="fa-solid fa-code"></i> <span data-lang="aboutTitle">Sobre Mim</span>
+            </div>
+            <p class="content-text" data-lang="aboutText">
+                Sou um desenvolvedor apaixonado por unir criatividade e tecnologia. Especialista em criar soluções que automatizam processos e expandem as possibilidades de criadores de conteúdo. Transformo ideias complexas em interfaces simples e poderosas.
+            </p>
+        </div>
+
+        <!-- CAIXA 2: AMBIÇÃO -->
+        <div class="text-box">
+            <div class="box-title">
+                <i class="fa-solid fa-rocket"></i> <span data-lang="ambitionTitle">Minha Ambição</span>
+            </div>
+            <p class="content-text" data-lang="ambitionText">
+                Meu objetivo é criar o maior ecossistema de ferramentas para o After Effects e edição de vídeo. Quero empoderar editores com plugins inteligentes, como o Mago do After, permitindo que foquem na arte enquanto o código cuida do trabalho pesado.
+            </p>
+        </div>
+
+        <footer><p>&copy; 2023 DevAnimale. Code is Life.</p></footer>
+    </div>
+
+    <!-- SCRIPT DE TRADUÇÃO -->
+    <script>
+        const translations = {
+            en: {
+                back: "Back",
+                role: "Fullstack Developer & Creator",
+                aboutTitle: "About Me",
+                aboutText: "I am a developer passionate about merging creativity with technology. Specialized in building solutions that automate processes and expand possibilities for content creators. I turn complex ideas into simple, powerful interfaces.",
+                ambitionTitle: "My Ambition",
+                ambitionText: "My goal is to create the largest ecosystem of tools for After Effects and video editing. I want to empower editors with intelligent plugins, like Wizard of After, allowing them to focus on art while the code handles the heavy lifting."
+            }
+        };
+
+        const userLang = navigator.language || navigator.userLanguage;
+        if (!userLang.startsWith('pt')) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations.en[key]) el.innerText = translations.en[key];
+            });
+        }
+    </script>
+
+</body>
+</html>
