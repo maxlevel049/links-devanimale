@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso | DevAnimale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            background-color: #050505; color: #ffffff; min-height: 100vh;
+            display: flex; justify-content: center; align-items: flex-start;
+            padding: 40px 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+        }
+        .container { width: 100%; max-width: 600px; text-align: center; animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .back-link {
+            display: flex; align-items: center; gap: 8px; color: #9ca3af; text-decoration: none;
+            font-weight: 500; margin-bottom: 30px; transition: 0.2s; align-self: flex-start;
+        }
+        .back-link:hover { color: #fff; transform: translateX(-5px); }
+
+        .page-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; color: #fff; text-align: left; }
+        .page-desc { color: #9ca3af; font-size: 0.9rem; margin-bottom: 30px; text-align: left; }
+
+        /* ESTILO DO ACORDEÃO (LISTA DE APPS) */
+        .app-item {
+            background: #111; border: 1px solid #222; border-radius: 12px;
+            margin-bottom: 15px; overflow: hidden; transition: 0.3s;
+        }
+        .app-header {
+            width: 100%; padding: 20px; background: #161616;
+            border: none; display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; transition: 0.3s;
+        }
+        .app-header:hover { background: #222; }
+        
+        .app-name { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .app-icon-mini { color: #8b5cf6; } /* Roxo do Mago */
+        
+        .arrow { transition: 0.3s; color: #666; }
+        
+        /* Estado Ativo (Aberto) */
+        .app-item.active { border-color: #8b5cf6; }
+        .app-item.active .arrow { transform: rotate(180deg); color: #8b5cf6; }
+        
+        .app-content {
+            display: none; padding: 25px; background: #0a0a0a; text-align: left;
+            border-top: 1px solid #222;
+        }
+        .app-item.active .app-content { display: block; animation: slideDown 0.3s ease; }
+
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* TEXTOS DOS TERMOS */
+        .term-block { margin-bottom: 20px; }
+        .term-title { color: #22c55e; font-size: 0.9rem; font-weight: 700; margin-bottom: 5px; display: block; }
+        .term-text { font-size: 0.85rem; color: #d1d5db; line-height: 1.6; }
+
+        footer { margin-top: 50px; color: #4b5563; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-chevron-left"></i> <span data-lang="back">Voltar para Home</span>
+        </a>
+
+        <h1 class="page-title" data-lang="title">Termos de Uso & Apps</h1>
+        <p class="page-desc" data-lang="subtitle">Selecione um aplicativo abaixo para ler os termos específicos, políticas de privacidade e detalhes de monetização.</p>
+
+        <!-- LISTA DE APPS -->
+        
+        <!-- APP 1: MAGO DO AFTER -->
+        <div class="app-item" onclick="toggleItem(this)">
+            <div class="app-header">
+                <div class="app-name">
+                    <i class="fa-solid fa-hat-wizard app-icon-mini"></i>
+                    Mago do After
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="app-content">
+                
+                <div class="term-block">
+                    <span class="term-title" data-lang="magoT1">1. Gratuidade e Apoio</span>
+                    <p class="term-text" data-lang="magoD1">
+                        O "Mago do After" é um aplicativo gratuito. Ele pode conter opções de compras internas ou anúncios. Estes recursos existem exclusivamente para apoiar financeiramente o desenvolvedor e manter o projeto vivo. O pagamento é voluntário e não bloqueia o uso essencial da ferramenta.
+                    </p>
+                </div>
+
+                <div class="term-block">
+                    <span class="term-title" data-lang="magoT2">2. Dados e Login</span>
+                    <p class="term-text" data-lang="magoD2">
+                        Caso o aplicativo solicite login, este serve apenas para salvar preferências ou progresso na nuvem. Seus dados (como e-mail) são protegidos e nunca serão vendidos ou compartilhados com terceiros.
+                    </p>
+                </div>
+
+                <div class="term-block">
+                    <span class="term-title" data-lang="magoT3">3. Isenção de Responsabilidade</span>
+                    <p class="term-text" data-lang="magoD3">
+                        Este software é fornecido "como está". O DevAnimale não se responsabiliza por incompatibilidades futuras com atualizações de terceiros (como Adobe After Effects) ou mau uso da ferramenta.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- APP 2: EXEMPLO FUTURO (Deixei comentado, só copiar e colar quando tiver outro) -->
+        <!-- 
+        <div class="app-item" onclick="toggleItem(this)">
+            <div class="app-header">
+                <div class="app-name"><i class="fa-solid fa-gamepad app-icon-mini" style="color:blue"></i> Próximo Jogo</div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="app-content"> ...termos... </div>
+        </div>
+        -->
+
+        <footer>
+            <p>&copy; 2023 DevAnimale. Legal.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function toggleItem(element) {
+            // Fecha os outros se quiser (opcional, aqui deixei abrir varios)
+            element.classList.toggle('active');
+        }
+
+        const translations = {
+            en: {
+                back: "Back to Home",
+                title: "Terms of Use & Apps",
+                subtitle: "Select an app below to read specific terms of use, privacy policies, and monetization details.",
+                
+                // Mago do After
+                magoT1: "1. Free Use & Support",
+                magoD1: "\"Wizard of After\" is a free app. It may contain in-app purchases or ads. These features exist exclusively to financially support the developer and keep the project alive. Payment is voluntary and does not block essential use of the tool.",
+                magoT2: "2. Data & Login",
+                magoD2: "If the app requests login, it is only to save preferences or progress in the cloud. Your data (such as email) is protected and will never be sold or shared with third parties.",
+                magoT3: "3. Disclaimer",
+                magoD3: "This software is provided \"as is\". DevAnimale is not responsible for future incompatibilities with third-party updates (such as Adobe After Effects) or misuse of the tool."
+            }
+        };
+
+        const userLang = navigator.language || navigator.userLanguage;
+        if (!userLang.startsWith('pt')) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations.en[key]) el.innerText = translations.en[key];
+            });
+        }
+    </script>
+
+</body>
+</html>
