@@ -33,12 +33,13 @@
             background: linear-gradient(to right, #fff, #a78bfa);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px;
         }
-        .bio p { color: #9ca3af; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; }
+        .bio p { color: #9ca3af; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
 
+        /* ESTILO DOS BOTÕES GRANDES */
         .big-button {
             display: flex; align-items: center; background: linear-gradient(145deg, #171717, #0f0f0f);
             border: 1px solid #333; padding: 20px; border-radius: 16px; text-decoration: none; color: white;
-            margin-bottom: 30px; transition: all 0.3s; position: relative; overflow: hidden;
+            margin-bottom: 15px; transition: all 0.3s; position: relative; overflow: hidden;
         }
         .big-button:hover { transform: translateY(-5px); border-color: #8b5cf6; box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5); }
         .icon-wrapper {
@@ -51,7 +52,11 @@
         .arrow-icon { color: #4b5563; transition: 0.3s; }
         .big-button:hover .arrow-icon { color: #fff; transform: translateX(5px); }
 
-        .social-row { display: flex; justify-content: center; gap: 15px; }
+        /* Botão Secundário (Sobre Mim) - Cor diferente no hover */
+        .about-btn:hover { border-color: #22c55e; box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.4); }
+        .about-btn .icon-wrapper { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+
+        .social-row { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
         .social-btn {
             width: 50px; height: 50px; border-radius: 12px; background: #111; border: 1px solid #222;
             display: flex; align-items: center; justify-content: center; color: #9ca3af; text-decoration: none;
@@ -65,7 +70,6 @@
 
     <div class="container">
         <div class="perfil-container">
-            <!-- FOTO DO PERFIL -->
             <img src="perfil.jpg" alt="DevAnimale" class="foto">
             <div class="status-dot"></div>
         </div>
@@ -75,6 +79,7 @@
             <p data-lang="job">Desenvolvedor Fullstack & Criador</p>
         </div>
 
+        <!-- BOTÃO 1: MEUS APPS -->
         <a href="apps.html" class="big-button">
             <div class="icon-wrapper"><i class="fa-solid fa-layer-group"></i></div>
             <div class="text-wrapper">
@@ -84,44 +89,41 @@
             <i class="fa-solid fa-arrow-right arrow-icon"></i>
         </a>
 
+        <!-- BOTÃO 2: SOBRE MIM (NOVO) -->
+        <a href="about.html" class="big-button about-btn">
+            <div class="icon-wrapper"><i class="fa-solid fa-user-astronaut"></i></div>
+            <div class="text-wrapper">
+                <span class="label" data-lang="profile">PERFIL</span>
+                <span class="title" data-lang="aboutme">QUEM SOU EU</span>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+        </a>
+
         <div class="social-row">
-            <!-- GITHUB -->
-            <a href="https://github.com/maxlevel049" target="_blank" class="social-btn">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            
-            <!-- INSTAGRAM (LINK E ÍCONE ATUALIZADOS) -->
-            <a href="https://instagram.com/devanimale" target="_blank" class="social-btn">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            
-            <!-- EMAIL -->
-            <a href="mailto:pyloai@gmail.com" class="social-btn">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
+            <a href="https://github.com/maxlevel049" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+            <a href="https://instagram.com/devanimale" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:pyloai@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
         </div>
 
         <footer><p>&copy; 2023 DevAnimale. Code is Life.</p></footer>
     </div>
 
-    <!-- SCRIPT DE TRADUÇÃO -->
     <script>
         const translations = {
             en: {
                 job: "Fullstack Developer & Creator",
                 portfolio: "PORTFOLIO",
-                myapps: "MY APPS"
+                myapps: "MY APPS",
+                profile: "PROFILE",
+                aboutme: "WHO I AM"
             }
         };
 
         const userLang = navigator.language || navigator.userLanguage;
-
         if (!userLang.startsWith('pt')) {
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
-                if (translations.en[key]) {
-                    el.innerText = translations.en[key];
-                }
+                if (translations.en[key]) el.innerText = translations.en[key];
             });
         }
     </script>
