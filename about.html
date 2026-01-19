@@ -44,11 +44,10 @@
         .box-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
         .box-icon { color: #22c55e; font-size: 1.3rem; }
         .box-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
-
         .text-content { color: #d1d5db; font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
         .highlight { color: #22c55e; font-weight: 600; }
 
-        /* BOTÃO DE TERMOS */
+        /* BOTÃO DE ROLAGEM */
         .terms-btn-container { margin-bottom: 40px; }
         .terms-link-btn {
             display: inline-flex; align-items: center; gap: 10px;
@@ -58,16 +57,41 @@
         }
         .terms-link-btn:hover { border-color: #22c55e; color: #fff; background: rgba(34, 197, 94, 0.1); }
 
-        /* SEÇÃO DE TERMOS */
+        /* ÁREA DOS TERMOS */
         .terms-section {
             background: rgba(17, 17, 17, 0.6); border: 1px solid #222;
             padding: 30px; border-radius: 20px; text-align: left;
             scroll-margin-top: 20px;
         }
-        .term-header { border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
-        .term-item { margin-bottom: 20px; }
-        .term-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 5px; display: block; }
-        .term-desc { font-size: 0.85rem; color: #9ca3af; line-height: 1.6; }
+
+        /* LISTA DE APPS (ACCORDION) */
+        .app-accordion {
+            background: #0a0a0a; border: 1px solid #333; border-radius: 12px;
+            margin-bottom: 15px; overflow: hidden; transition: 0.3s;
+        }
+        .accordion-header {
+            width: 100%; padding: 15px 20px; background: #161616;
+            border: none; border-bottom: 1px solid transparent;
+            display: flex; justify-content: space-between; align-items: center;
+            color: #fff; font-weight: 700; font-size: 1rem; cursor: pointer;
+            transition: 0.3s;
+        }
+        .accordion-header:hover { background: #222; color: #22c55e; }
+        
+        /* Classe ativa para abrir */
+        .app-accordion.active .accordion-header { border-bottom: 1px solid #333; color: #22c55e; }
+        .app-accordion.active .accordion-header i { transform: rotate(180deg); }
+        
+        .accordion-content {
+            display: none; padding: 20px; background: #0a0a0a;
+        }
+        .app-accordion.active .accordion-content { display: block; animation: slideDown 0.3s ease; }
+
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .term-subtitle { color: #22c55e; font-size: 0.85rem; font-weight: 700; margin-bottom: 5px; display: block; margin-top: 15px; }
+        .term-subtitle:first-child { margin-top: 0; }
+        .term-text { font-size: 0.8rem; color: #9ca3af; line-height: 1.6; }
 
         footer { margin-top: 50px; color: #4b5563; font-size: 0.75rem; text-align: center; }
     </style>
@@ -94,7 +118,7 @@
                 <h2 class="box-title" data-lang="aboutTitle">Quem sou eu?</h2>
             </div>
             <p class="text-content" data-lang="aboutText">
-                Não sou apenas um programador, sou um <span class="highlight">criador de soluções</span>. Desenvolvo ferramentas digitais e aplicativos variados para resolver problemas reais. Seja um utilitário de produtividade, um jogo ou uma ferramenta de automação: onde existe complexidade, eu crio simplicidade através do código.
+                Não sou apenas um programador, sou um <span class="highlight">criador de soluções</span>. Desenvolvo ferramentas digitais e aplicativos variados para resolver problemas reais. Onde existe complexidade, eu crio simplicidade através do código.
             </p>
         </div>
 
@@ -118,34 +142,44 @@
             </a>
         </div>
 
-        <!-- SEÇÃO DE TERMOS -->
+        <!-- SEÇÃO DE TERMOS E APPS -->
         <div id="termos-legais" class="terms-section">
-            <div class="term-header">
-                <h2 class="box-title" data-lang="legalTitle">Termos Legais & Privacidade</h2>
+            <div class="box-header">
+                <i class="fa-solid fa-scale-balanced box-icon"></i>
+                <h2 class="box-title" data-lang="legalTitle">Termos por Aplicativo</h2>
             </div>
+            <p class="text-content" style="margin-bottom: 20px; font-size: 0.8rem;" data-lang="legalIntro">
+                Clique no nome do aplicativo abaixo para ler os termos específicos de uso, monetização e privacidade.
+            </p>
             
-            <div class="term-item">
-                <span class="term-title" data-lang="term1Title">1. Responsabilidade de Uso</span>
-                <p class="term-desc" data-lang="term1Desc">Os aplicativos desenvolvidos por DevAnimale são ferramentas independentes. O usuário concorda em utilizá-los de forma ética e responsável.</p>
+            <!-- APP 1: MAGO DO AFTER (CLICÁVEL) -->
+            <div class="app-accordion" onclick="toggleAccordion(this)">
+                <div class="accordion-header">
+                    <span><i class="fa-solid fa-hat-wizard" style="margin-right: 8px; color:#8b5cf6;"></i> Mago do After</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    
+                    <span class="term-subtitle" data-lang="magoT1">1. Uso Gratuito e Apoio</span>
+                    <p class="term-text" data-lang="magoD1">
+                        O "Mago do After" é disponibilizado gratuitamente para uso. O aplicativo contém opções de compras internas e anúncios. Estes pagamentos são opcionais e servem exclusivamente para apoiar o desenvolvedor a manter o projeto ativo. Nenhuma função vital é bloqueada por pagamento.
+                    </p>
+
+                    <span class="term-subtitle" data-lang="magoT2">2. Login e Dados</span>
+                    <p class="term-text" data-lang="magoD2">
+                        O sistema de login é utilizado para salvar suas preferências e progresso na nuvem. Seus dados (email e nome) são protegidos e jamais serão vendidos para terceiros.
+                    </p>
+
+                    <span class="term-subtitle" data-lang="magoT3">3. Isenção de Responsabilidade</span>
+                    <p class="term-text" data-lang="magoD3">
+                        Este aplicativo é uma ferramenta de auxílio para edição. O desenvolvedor não se responsabiliza por eventuais incompatibilidades com versões de terceiros de softwares de edição.
+                    </p>
+
+                </div>
             </div>
 
-            <div class="term-item">
-                <span class="term-title" data-lang="term2Title">2. Privacidade e Dados</span>
-                <p class="term-desc" data-lang="term2Desc">Transparência total: Nossos aplicativos são projetados para respeitar sua privacidade. Não coletamos, vendemos ou compartilhamos dados pessoais sensíveis com terceiros sem consentimento.</p>
-            </div>
+            <!-- Futuros apps entram aqui copiando o bloco acima -->
 
-            <div class="term-item">
-                <span class="term-title" data-lang="term3Title">3. Propriedade Intelectual</span>
-                <p class="term-desc" data-lang="term3Desc">Todo o código, design, marcas e funcionalidades dos apps listados neste portfólio são de propriedade intelectual do DevAnimale.</p>
-            </div>
-
-            <!-- NOVO TERMO SOBRE MONETIZAÇÃO -->
-            <div class="term-item">
-                <span class="term-title" data-lang="term4Title">4. Monetização e Pagamentos</span>
-                <p class="term-desc" data-lang="term4Desc">
-                    Acreditamos na tecnologia acessível. A maioria dos nossos apps é gratuita para usar, contendo opções de monetização (anúncios ou compras) e login. O uso das ferramentas principais é gratuito; os pagamentos são opcionais e servem exclusivamente para apoiar o desenvolvimento contínuo dos projetos.
-                </p>
-            </div>
         </div>
 
         <footer>
@@ -154,37 +188,33 @@
 
     </div>
 
-    <!-- SCRIPT DE TRADUÇÃO -->
+    <!-- SCRIPT DE INTERAÇÃO E TRADUÇÃO -->
     <script>
+        // Função para abrir e fechar o acordeão
+        function toggleAccordion(element) {
+            element.classList.toggle('active');
+        }
+
         const translations = {
             en: {
                 back: "Back to Home",
                 role: "Fullstack Developer",
-                
-                // Sobre
                 aboutTitle: "Who am I?",
-                aboutText: "I am not just a programmer, I am a <span class='highlight'>solution creator</span>. I develop digital tools and various apps to solve real problems. Whether it's a productivity utility, a game, or an automation tool: where complexity exists, I create simplicity through code.",
-                
-                // Ambição
+                aboutText: "I am not just a programmer, I am a <span class='highlight'>solution creator</span>. I develop digital tools and various apps to solve real problems. Where complexity exists, I create simplicity through code.",
                 ambitionTitle: "My Ambition",
-                ambitionText: "My mission is to build a complete digital ecosystem. I want technology to be a superpower accessible to everyone. My goal is to launch innovative applications across different niches, always focusing on performance, design, and above all, utility for you.",
-
-                // Termos
+                ambitionText: "My mission is to build a complete digital ecosystem. I want technology to be a superpower accessible to everyone. My goal is to launch innovative applications across different niches.",
+                
                 btnTerms: "View Apps Terms of Use",
-                legalTitle: "Legal Terms & Privacy",
-                
-                term1Title: "1. Usage Responsibility",
-                term1Desc: "Applications developed by DevAnimale are independent tools. The user agrees to use them ethically and responsibly.",
-                
-                term2Title: "2. Privacy & Data",
-                term2Desc: "Total transparency: Our apps are designed to respect your privacy. We do not collect, sell, or share sensitive personal data with third parties without consent.",
-                
-                term3Title: "3. Intellectual Property",
-                term3Desc: "All code, design, branding, and functionality of the apps listed in this portfolio are the intellectual property of DevAnimale.",
+                legalTitle: "App Terms & Privacy",
+                legalIntro: "Click on the app name below to read specific terms of use, monetization, and privacy.",
 
-                // Monetização (Inglês)
-                term4Title: "4. Monetization & Payments",
-                term4Desc: "We believe in accessible technology. Most of our apps are free to use, featuring monetization options (ads or purchases) and login. The core usage of the tools is free; payments are optional and serve exclusively to support the continuous development of the projects."
+                // Termos do Mago do After
+                magoT1: "1. Free Use & Support",
+                magoD1: "\"Wizard of After\" is available for free. The app contains in-app purchases and ads. These payments are optional and serve exclusively to support the developer in keeping the project alive. No vital function is blocked by payment.",
+                magoT2: "2. Login & Data",
+                magoD2: "The login system is used to save your preferences and progress in the cloud. Your data (email and name) is protected and will never be sold to third parties.",
+                magoT3: "3. Disclaimer",
+                magoD3: "This app is an editing aid tool. The developer is not responsible for any incompatibilities with third-party versions of editing software."
             }
         };
 
