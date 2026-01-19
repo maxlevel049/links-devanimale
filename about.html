@@ -9,9 +9,10 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; /* Faz o botão deslizar suavemente */ }
         body {
             background-color: #050505; color: #ffffff; min-height: 100vh;
-            display: flex; justify-content: center; align-items: flex-start; /* Alinhado ao topo para rolar */
+            display: flex; justify-content: center; align-items: flex-start;
             padding: 40px 20px;
             background-image: radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 40%),
                               radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
@@ -25,8 +26,8 @@
         }
         .back-link:hover { color: #fff; transform: translateX(-5px); }
 
-        /* HEADER DO PERFIL */
-        .profile-header { margin-bottom: 40px; }
+        /* HEADER */
+        .profile-header { margin-bottom: 30px; }
         .hero-foto {
             width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
             border: 3px solid #22c55e; margin-bottom: 15px;
@@ -35,18 +36,11 @@
         .main-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
         .subtitle { color: #22c55e; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
 
-        /* SEPARADOR */
-        .divider {
-            height: 1px; background: linear-gradient(90deg, transparent, #333, transparent);
-            margin: 30px 0; width: 100%;
-        }
-
-        /* CAIXAS DE CONTEÚDO */
+        /* CAIXAS DE TEXTO */
         .section-box {
             background: #111; border: 1px solid #222; border-radius: 20px;
             padding: 30px; text-align: left; margin-bottom: 25px;
         }
-        
         .box-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
         .box-icon { color: #22c55e; font-size: 1.3rem; }
         .box-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
@@ -54,15 +48,26 @@
         .text-content { color: #d1d5db; font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
         .highlight { color: #22c55e; font-weight: 600; }
 
-        /* ESTILO DOS TERMOS (MENOR E MAIS TÉCNICO) */
-        .terms-box {
-            background: rgba(17, 17, 17, 0.6); border: 1px solid #222;
+        /* BOTÃO DE TERMOS (NOVO) */
+        .terms-btn-container { margin-bottom: 40px; }
+        .terms-link-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: transparent; border: 1px solid #333; color: #888;
+            padding: 12px 25px; border-radius: 50px; text-decoration: none;
+            font-size: 0.85rem; transition: 0.3s;
         }
-        .terms-box .box-icon { color: #9ca3af; }
-        .term-item { margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 15px; }
-        .term-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .term-title { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 5px; display: block; }
-        .term-desc { font-size: 0.8rem; color: #888; line-height: 1.5; }
+        .terms-link-btn:hover { border-color: #22c55e; color: #fff; background: rgba(34, 197, 94, 0.1); }
+
+        /* SEÇÃO DE TERMOS (ALVO DO BOTÃO) */
+        .terms-section {
+            background: rgba(17, 17, 17, 0.6); border: 1px solid #222;
+            padding: 30px; border-radius: 20px; text-align: left;
+            scroll-margin-top: 20px; /* Espaço ao rolar */
+        }
+        .term-header { border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
+        .term-item { margin-bottom: 20px; }
+        .term-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 5px; display: block; }
+        .term-desc { font-size: 0.85rem; color: #9ca3af; line-height: 1.6; }
 
         footer { margin-top: 50px; color: #4b5563; font-size: 0.75rem; text-align: center; }
     </style>
@@ -75,49 +80,63 @@
             <i class="fa-solid fa-chevron-left"></i> <span data-lang="back">Voltar para Home</span>
         </a>
 
-        <!-- CABEÇALHO -->
+        <!-- HEADER -->
         <div class="profile-header">
             <img src="perfil.jpg" alt="DevAnimale" class="hero-foto">
             <h1 class="main-title">DEV ANIMALE</h1>
             <p class="subtitle" data-lang="role">Fullstack Developer</p>
         </div>
 
-        <!-- SEÇÃO 1: QUEM SOU EU -->
+        <!-- QUEM SOU EU (ATUALIZADO) -->
         <div class="section-box">
             <div class="box-header">
-                <i class="fa-solid fa-user-astronaut box-icon"></i>
+                <i class="fa-solid fa-code box-icon"></i>
                 <h2 class="box-title" data-lang="aboutTitle">Quem sou eu?</h2>
             </div>
-            <p class="text-content" data-lang="aboutText1">
-                Olá! Sou um desenvolvedor apaixonado por <span class="highlight">automação e criatividade</span>. Minha missão é unir o mundo do código com o design.
-            </p>
-            <p class="text-content" data-lang="aboutText2">
-                Meu objetivo principal é criar o maior ecossistema de ferramentas para o <strong>After Effects</strong>. Quero que editores foquem na arte enquanto meus plugins, como o Mago do After, resolvem a parte técnica.
+            <p class="text-content" data-lang="aboutText">
+                Não sou apenas um programador, sou um <span class="highlight">solucionador de problemas</span>. Desenvolvo ferramentas digitais, scripts e aplicativos que facilitam a vida das pessoas, seja na edição de vídeo ou na produtividade diária. Onde existe complexidade, eu crio simplicidade através do código.
             </p>
         </div>
 
-        <div class="divider"></div>
-
-        <!-- SEÇÃO 2: TERMOS E PRIVACIDADE -->
-        <div class="section-box terms-box">
+        <!-- AMBIÇÃO (MOTIVACIONAL) -->
+        <div class="section-box">
             <div class="box-header">
-                <i class="fa-solid fa-scale-balanced box-icon"></i>
-                <h2 class="box-title" data-lang="termsTitle">Termos & Privacidade</h2>
+                <i class="fa-solid fa-meteor box-icon"></i>
+                <h2 class="box-title" data-lang="ambitionTitle">Minha Ambição</h2>
+            </div>
+            <p class="text-content" data-lang="ambitionText">
+                Minha missão é quebrar barreiras técnicas. Quero criar um ecossistema onde a tecnologia não seja um obstáculo, mas um superpoder. Acredito que qualquer pessoa pode materializar suas ideias se tiver as ferramentas certas. Meus apps existem para transformar o "impossível" em "feito".
+            </p>
+        </div>
+
+        <!-- BOTÃO PARA IR AOS TERMOS -->
+        <div class="terms-btn-container">
+            <a href="#termos-legais" class="terms-link-btn">
+                <i class="fa-solid fa-file-contract"></i> 
+                <span data-lang="btnTerms">Ver Termos de Uso dos Apps</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+
+        <!-- SEÇÃO DE TERMOS (COM ID PARA O LINK FUNCIONAR) -->
+        <div id="termos-legais" class="terms-section">
+            <div class="term-header">
+                <h2 class="box-title" data-lang="legalTitle">Termos Legais & Privacidade</h2>
             </div>
             
             <div class="term-item">
-                <span class="term-title" data-lang="term1Title">1. Uso dos Aplicativos</span>
-                <p class="term-desc" data-lang="term1Desc">O "Mago do After" e outros apps aqui listados são ferramentas de auxílio. O uso é de total responsabilidade do usuário.</p>
+                <span class="term-title" data-lang="term1Title">1. Responsabilidade de Uso</span>
+                <p class="term-desc" data-lang="term1Desc">O "Mago do After" e demais utilitários são ferramentas de auxílio. O usuário concorda em utilizá-los de forma ética. O desenvolvedor não se responsabiliza pelo uso indevido das ferramentas.</p>
             </div>
 
             <div class="term-item">
-                <span class="term-title" data-lang="term2Title">2. Privacidade de Dados</span>
-                <p class="term-desc" data-lang="term2Desc">Nós prezamos pela sua privacidade. Nossos aplicativos não coletam dados pessoais sensíveis sem o seu consentimento explícito.</p>
+                <span class="term-title" data-lang="term2Title">2. Privacidade e Dados</span>
+                <p class="term-desc" data-lang="term2Desc">Transparência total: Nossos aplicativos são projetados para funcionar localmente sempre que possível. Não coletamos, vendemos ou compartilhamos seus dados pessoais com terceiros.</p>
             </div>
 
             <div class="term-item">
-                <span class="term-title" data-lang="term3Title">3. Atualizações e Suporte</span>
-                <p class="term-desc" data-lang="term3Desc">Os softwares são fornecidos "como estão". Atualizações serão lançadas periodicamente para corrigir bugs e adicionar funções.</p>
+                <span class="term-title" data-lang="term3Title">3. Propriedade Intelectual</span>
+                <p class="term-desc" data-lang="term3Desc">Todo o código, design e funcionalidades dos apps são de propriedade intelectual do DevAnimale. A distribuição não autorizada ou engenharia reversa é proibida.</p>
             </div>
         </div>
 
@@ -136,17 +155,23 @@
                 
                 // Sobre
                 aboutTitle: "Who am I?",
-                aboutText1: "Hello! I am a developer passionate about <span class='highlight'>automation and creativity</span>. My mission is to bridge the world of code with design.",
-                aboutText2: "My main goal is to create the largest ecosystem of tools for <strong>After Effects</strong>. I want editors to focus on art while my plugins, like Wizard of After, handle the technical side.",
+                aboutText: "I am not just a programmer, I am a <span class='highlight'>problem solver</span>. I develop digital tools, scripts, and apps that make people's lives easier, whether in video editing or daily productivity. Where complexity exists, I create simplicity through code.",
                 
+                // Ambição
+                ambitionTitle: "My Ambition",
+                ambitionText: "My mission is to break technical barriers. I want to create an ecosystem where technology is not an obstacle, but a superpower. I believe anyone can materialize their ideas with the right tools. My apps exist to turn 'impossible' into 'done'.",
+
+                // Botão e Título Termos
+                btnTerms: "View Apps Terms of Use",
+                legalTitle: "Legal Terms & Privacy",
+
                 // Termos
-                termsTitle: "Terms & Privacy",
-                term1Title: "1. App Usage",
-                term1Desc: "\"Wizard of After\" and other apps listed here are support tools. Usage is the sole responsibility of the user.",
-                term2Title: "2. Data Privacy",
-                term2Desc: "We value your privacy. Our applications do not collect sensitive personal data without your explicit consent.",
-                term3Title: "3. Updates & Support",
-                term3Desc: "The software is provided \"as is\". Updates will be released periodically to fix bugs and add features."
+                term1Title: "1. Usage Responsibility",
+                term1Desc: "\"Wizard of After\" and other utilities are support tools. The user agrees to use them ethically. The developer is not responsible for misuse of the tools.",
+                term2Title: "2. Privacy & Data",
+                term2Desc: "Total transparency: Our apps are designed to work locally whenever possible. We do not collect, sell, or share your personal data with third parties.",
+                term3Title: "3. Intellectual Property",
+                term3Desc: "All code, design, and app functionality are the intellectual property of DevAnimale. Unauthorized distribution or reverse engineering is prohibited."
             }
         };
 
@@ -156,7 +181,7 @@
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
                 if (translations.en[key]) {
-                    el.innerHTML = translations.en[key]; // innerHTML para aceitar as tags <span> e <strong>
+                    el.innerHTML = translations.en[key];
                 }
             });
         }
